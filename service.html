@@ -29,15 +29,25 @@
 
         <script>
         const renderResult = () => {
-            const resultDiv = document.createElement('div');
-            resultDiv.textContent = 'test';
             const uploadDiv = document.querySelector('#upload_container')
+            const uploadInput = document.querySelector('#upload_input')
+            const resultInputFileName = document.querySelector('#result_input_file_name')
+            // const resultDiv = document.createElement('div');
+            // resultDiv.textContent = uploadInput.value.split('\\')[2];
             console.log(uploadDiv);
-            // uploadDiv.append(resultDiv)
+            // console.log('uploadInput.value',uploadInput.value.split(''));
+            // console.log('uploadInput.value',uploadInput.value.split('\\'));
             uploadDiv.classList.remove('d-none')
-            // uploadDiv.insertAfter(resultDiv)
-            // uploadDiv.parentNode.insertBefore(uploadDiv, resultDiv);
+            resultInputFileName.value = uploadInput.value.split('\\')[2];
         }
+        </script>
+
+        <script>
+            const renderInstruction = () => {
+                const instrucionDiv = document.querySelector('#upload_instruction');
+                console.log(instrucionDiv);
+                instrucionDiv.classList.remove('d-none')
+            }
         </script>
     </head>
 
@@ -148,7 +158,7 @@
                     <input id="upload_input" type="file" class="form-control border-0 py-3" placeholder="Название файла">
                 </div>
                 <div class="text-start">    
-                    <button class="btn bg-primary text-white py-3 px-5" type="button">Выбрать файл</button>
+                    <!-- <button class="btn bg-primary text-white py-3 px-5" type="button">Выбрать файл</button> -->
                     <button class="btn bg-primary text-white py-3 px-5" type="button" onClick="renderResult()">Загрузить исследование</button>
                 </div>
             </div>
@@ -157,25 +167,166 @@
 
 
         <!-- Result Start -->
-         <div class="container-fluid p-5 d-none" id="upload_container">
-            <h5 class="text-primary pb-3">Результат анализа вашего исследования</h5>
+         <!-- <div class="container-fluid p-5" id="upload_container"> -->
+           <!-- 1200*137 1400*373  -->
+         <div class="container-fluid p-5 rounded upload-form d-none" id="upload_container">
+            <h4 class="text-warning pb-3">Результат анализа вашего исследования</h4>
+            <h5 class="text-primary pb-3">Информация о загруженном файле</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Имя файла</span>
+                </div>
+                <input id="result_input_file_name" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">ID исследования</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="45789">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Дата анализа</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="01.07.2024">
+            </div>
+
+            <h5 class="text-primary pb-3">Информация о Пациенте</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">ФИО пациента</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="John Doe">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Возраст</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="45 лет">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Пол</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="мужской">
+            </div>
+
+            <h5 class="text-primary pb-3">Период Мониторирования</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Дата начала</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="29.06.2024">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Дата конца</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="30.06.2024">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Длительность</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="24 часа">
+            </div>
+            
+            <h5 class="text-primary pb-3">Общие Данные</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Средняя частота сердечных сокращений</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="72 уд/мин">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Минимальная частота сердечных сокращений</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="48 уд/мин">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Максимальная частота сердечных сокращений</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="125 уд/мин">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Общее количество сердечных сокращений</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="103.256">
+            </div>
+            
+            <h5 class="text-primary pb-3">Аритмии</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Желудочковые экстрасистолы</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="25 (0.02% от общего числа ударов)">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Наджелудочковые экстрасистолы</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="35 (0.03% от общего числа ударов)">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Эпизоды тахикардии</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="5 (суммарное время: 10 минут)">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Эпизоды брадикардии</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="3 (суммарное время: 8 минут)">
+            </div>
+
+            <h5 class="text-primary pb-3">Эпизоды Ишемии</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Количество</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="2">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Длительность</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="4 минуты">
+            </div>
+            <div class="input-group mb-5">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Максимальное смещение ST</span>
+                </div>
+                <input id="result_input_analyse_id" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="2 мм">
+            </div>
+
+            <div class="text-start">    
+                <button class="btn bg-primary text-white py-3 px-5" type="button">Скачать результат</button>
+                <button class="btn bg-primary text-white py-3 px-5" type="button">Распечатать результат</button>
+            </div>
          </div>
         <!-- Result End -->
 
 
         <!-- Upload instruction Start -->
         <div class="container-fluid p-5">
-            <h5 class="text-primary pb-3">Инструкция по загрузке файлов и исользованию нашего алгоритма</h5>
-            <ol class="list-group list-group-numbered pb-3">
-                <li class="list-group-item">На странице найдите кнопку с надписью "Выбрать файл" и нажмите на нее</li>
-                <li class="list-group-item">В открывшемся диалоговом окне выберите файл с исследованием на вашем компьютере. Убедитесь, что выбран правильный файл, и нажмите "Открыть"</li>
-                <li class="list-group-item">После выбора файла убедитесь, что его имя отображается над кнопкой "Выбрать файл". Это подтверждает, что файл был успешно выбран</li>
-                <li class="list-group-item">Найдите кнопку с надписью "Загрузить исследование" и нажмите на нее, чтобы начать процесс загрузки и анализа вашего исследования</li>
-                <li class="list-group-item">Подождите, пока файл загружается на сайт. Время загрузки может зависеть от размера файла и скорости вашего интернет-соединения. После завершения загрузки должно появиться подтверждение успешной загрузки или сообщение об ошибке, если что-то пошло не так</li>
-                <li class="list-group-item">После завершения анализа вашего исследования на экране появится результат анализа</li>
-                <li class="list-group-item">Если вам необходимо сохранить результат нажмите кнопку "Скачать" или "Распечатать"</li>
-            </ol>
+            <button onClick="renderInstruction()" class="btn bg-primary text-white py-3 px-5" type="button">Инструкция по загрузке файлов</button>
+            <div id="upload_instruction" class="pt-5 d-none">
+                <h5 class="text-primary pb-3">Инструкция по загрузке файлов и исользованию нашего алгоритма</h5>
+                <ol class="list-group list-group-numbered pb-3">
+                    <li class="list-group-item">На странице найдите кнопку с надписью "Выбрать файл" и нажмите на нее</li>
+                    <li class="list-group-item">В открывшемся диалоговом окне выберите файл с исследованием на вашем компьютере. Убедитесь, что выбран правильный файл, и нажмите "Открыть"</li>
+                    <li class="list-group-item">После выбора файла убедитесь, что его имя отображается над кнопкой "Выбрать файл". Это подтверждает, что файл был успешно выбран</li>
+                    <li class="list-group-item">Найдите кнопку с надписью "Загрузить исследование" и нажмите на нее, чтобы начать процесс загрузки и анализа вашего исследования</li>
+                    <li class="list-group-item">Подождите, пока файл загружается на сайт. Время загрузки может зависеть от размера файла и скорости вашего интернет-соединения. После завершения загрузки должно появиться подтверждение успешной загрузки или сообщение об ошибке, если что-то пошло не так</li>
+                    <li class="list-group-item">После завершения анализа вашего исследования на экране появится результат анализа</li>
+                    <li class="list-group-item">Если вам необходимо сохранить результат нажмите кнопку "Скачать" или "Распечатать"</li>
+                </ol>
             <p>Если возникнут вопросы или проблемы при загрузке, обратитесь в службу поддержки нашей компании по телефону +7 701 111 11 11</p>
+            </div>
         </div>
         <!-- Upload instruction End -->
 
