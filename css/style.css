@@ -644,7 +644,19 @@
     background: #26d48c;
 }
 
+.upload-form {
+    background: #d2f9e9;
+}
+
 /*** Contact End ***/
+
+
+/* Upload file Start */
+#upload_input {
+    cursor: pointer;
+}
+
+/* Upload file Start */
 
 
 /*** Footer Start ***/

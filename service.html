@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>HighTech - IT Solutions Website Template</title>
+        <title>Rhythmus</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -26,6 +26,19 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <script>
+        const renderResult = () => {
+            const resultDiv = document.createElement('div');
+            resultDiv.textContent = 'test';
+            const uploadDiv = document.querySelector('#upload_container')
+            console.log(uploadDiv);
+            // uploadDiv.append(resultDiv)
+            uploadDiv.classList.remove('d-none')
+            // uploadDiv.insertAfter(resultDiv)
+            // uploadDiv.parentNode.insertBefore(uploadDiv, resultDiv);
+        }
+        </script>
     </head>
 
     <body>
@@ -96,99 +109,75 @@
         <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
                 <h1 class="display-2 text-white mb-4 animated slideInDown">Услуги</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
+                <!-- <nav aria-label="breadcrumb animated slideInDown">
                     <h4 class="text-warning">Данный раздел сайта находится в разработке. Вскоре здесь появится вся необходимая информация</h4>
-                </nav>
+                </nav> -->
+                <!-- <div class="carousel-caption">
+                    <a href="contact.html" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInRight">Загрузить исследование</button></a>
+                </div> -->
             </div>
+            <!-- <div class="container text-center py-5">
+                <a href="contact.html" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInRight">Загрузить исследование</button></a>
+            </div> -->
         </div>
         <!-- Page Header End -->
 
 
-        <!-- Services Start -->
-        <!-- <div class="container-fluid services py-5 my-5">
+        <!-- <script>
+            function CallMe()
+            {
+             window.open("file://PCNAME/E$");
+            }
+            </script>
+            <html>
+            <input  type="button" onClick="CallMe()" value="Open USB" />
+            </html> -->
+
+        <!-- Upload file Start -->
+        <div class="container-fluid py-1 mt-1">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Services</h5>
-                    <h1>Services Built Specifically For Your Business</h1>
+                    <h5 class="text-primary">Для использования нашего алгоритма</h5>
+                    <h1 class="mb-3">Загрузите исследование</h1>
+            </div>
+            <div class="p-5 rounded upload-form">
+                <!-- <div class="mb-4 d-flex ">
+                    <input type="text" class="form-control border-0 py-3" placeholder="Название файла">
+                </div> -->
+                <div class="mb-4 d-flex ">
+                    <input id="upload_input" type="file" class="form-control border-0 py-3" placeholder="Название файла">
                 </div>
-                <div class="row g-5 services-inner">
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-code fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Design</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Development</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">UI/UX Design</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Cecurity</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Digital Marketing</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fas fa-laptop fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Programming</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-start">    
+                    <button class="btn bg-primary text-white py-3 px-5" type="button">Выбрать файл</button>
+                    <button class="btn bg-primary text-white py-3 px-5" type="button" onClick="renderResult()">Загрузить исследование</button>
                 </div>
             </div>
-        </div> -->
-        <!-- Services End -->
+        </div>
+        <!-- Upload file End -->
+
+
+        <!-- Result Start -->
+         <div class="container-fluid p-5 d-none" id="upload_container">
+            <h5 class="text-primary pb-3">Результат анализа вашего исследования</h5>
+         </div>
+        <!-- Result End -->
+
+
+        <!-- Upload instruction Start -->
+        <div class="container-fluid p-5">
+            <h5 class="text-primary pb-3">Инструкция по загрузке файлов и исользованию нашего алгоритма</h5>
+            <ol class="list-group list-group-numbered pb-3">
+                <li class="list-group-item">На странице найдите кнопку с надписью "Выбрать файл" и нажмите на нее</li>
+                <li class="list-group-item">В открывшемся диалоговом окне выберите файл с исследованием на вашем компьютере. Убедитесь, что выбран правильный файл, и нажмите "Открыть"</li>
+                <li class="list-group-item">После выбора файла убедитесь, что его имя отображается над кнопкой "Выбрать файл". Это подтверждает, что файл был успешно выбран</li>
+                <li class="list-group-item">Найдите кнопку с надписью "Загрузить исследование" и нажмите на нее, чтобы начать процесс загрузки и анализа вашего исследования</li>
+                <li class="list-group-item">Подождите, пока файл загружается на сайт. Время загрузки может зависеть от размера файла и скорости вашего интернет-соединения. После завершения загрузки должно появиться подтверждение успешной загрузки или сообщение об ошибке, если что-то пошло не так</li>
+                <li class="list-group-item">После завершения анализа вашего исследования на экране появится результат анализа</li>
+                <li class="list-group-item">Если вам необходимо сохранить результат нажмите кнопку "Скачать" или "Распечатать"</li>
+            </ol>
+            <p>Если возникнут вопросы или проблемы при загрузке, обратитесь в службу поддержки нашей компании по телефону +7 701 111 11 11</p>
+        </div>
+        <!-- Upload instruction End -->
 
 
         <!-- Footer Start -->
