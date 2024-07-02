@@ -49,6 +49,18 @@
                 instrucionDiv.classList.remove('d-none')
             }
         </script>
+
+        <script>
+            const renderUploadButton = () => {
+                const uploadInput = document.querySelector('#upload_input')
+                const uploadButton = document.querySelector('#upload_button')
+                console.log('uploadInput.value-',uploadInput.value);
+                console.log('typeof uploadInput.value-', typeof(uploadInput.value));
+                console.log('typeof uploadInput.value-', uploadInput.value.length);
+                // if (uploadInput.value.length !== 0) uploadButton.classList.remove('d-none');
+                uploadButton.classList.remove('d-none')
+            }
+        </script>
     </head>
 
     <body>
@@ -88,12 +100,18 @@
                             <a href="service.html" class="nav-item nav-link active text-secondary">Услуги</a>
                             <a href="project.html" class="nav-item nav-link">Проекты</a>
                             <a href="blog.html" class="nav-item nav-link">Блог</a>
-
                             <a href="contact.html" class="nav-item nav-link">Контакты</a>
+                        </div>
+                        <div class="navbar-nav ms-auto mx-xl-auto p-0">
+                            <a href="#" class="nav-item nav-link text-secondary">Загрузить исследование</a>
                         </div>
                     </div>
                     <div class="d-none d-xl-flex flex-shirink-0">
-                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                        <!-- <a href="contact.html" class="nav-item nav-link">Загрузить исследование</a> -->
+
+                        <!-- <button class="btn bg-primary text-white py-2 px-2" type="button" onClick="renderResult()">Загрузить исследование</button> -->
+
+                        <!-- <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
                             <a href="" class="position-relative tada infinite">
                                 <i class="fa fa-phone-alt text-white fa-2x"></i>
                                 <div class="position-absolute" style="top: -7px; left: 20px;">
@@ -107,7 +125,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-center ms-4 ">
                             <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
-                        </div>
+                        </div> -->
                     </div>
                 </nav>
             </div>
@@ -133,16 +151,6 @@
         <!-- Page Header End -->
 
 
-        <!-- <script>
-            function CallMe()
-            {
-             window.open("file://PCNAME/E$");
-            }
-            </script>
-            <html>
-            <input  type="button" onClick="CallMe()" value="Open USB" />
-            </html> -->
-
         <!-- Upload file Start -->
         <div class="container-fluid py-1 mt-1" >
             <div class="container py-5">
@@ -155,11 +163,11 @@
                     <input type="text" class="form-control border-0 py-3" placeholder="Название файла">
                 </div> -->
                 <div class="mb-4 d-flex ">
-                    <input id="upload_input" type="file" class="form-control border-0 py-3" placeholder="Название файла">
+                    <input id="upload_input" type="file" class="form-control border-0 py-3" placeholder="Название файла" 
+                    onchange="renderUploadButton()">
                 </div>
                 <div class="text-start">    
-                    <!-- <button class="btn bg-primary text-white py-3 px-5" type="button">Выбрать файл</button> -->
-                    <button class="btn bg-primary text-white py-3 px-5" type="button" onClick="renderResult()">Загрузить исследование</button>
+                    <button id="upload_button" class="btn bg-primary text-white py-3 px-5 d-none" type="button" onclick="renderResult()">Загрузить исследование</button>
                 </div>
             </div>
         </div>
@@ -169,7 +177,7 @@
         <!-- Result Start -->
          <!-- <div class="container-fluid p-5" id="upload_container"> -->
            <!-- 1200*137 1400*373  -->
-         <div class="container-fluid p-5 rounded upload-form d-none" id="upload_container" style="background-color: rgb(200, 200, 200)">
+         <div class="container-fluid p-5 rounded upload-form d-none" id="upload_container" style="background-color: rgb(240, 240, 240)">
             <h4 class="pb-3" style="color: rgb(55, 45, 163)">Результат анализа вашего исследования</h4>
             <h5 class="text-primary pb-3">Информация о загруженном файле</h5>
             <div class="input-group mb-3">
